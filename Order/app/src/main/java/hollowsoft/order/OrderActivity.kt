@@ -18,7 +18,7 @@ import kotlin.concurrent.schedule
 open class OrderActivity : AppCompatActivity(), ServiceBindListener {
 
     companion object {
-        const val DELAY = 1000L
+        const val DELAY = 1500L
     }
 
     private var bound = false
