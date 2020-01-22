@@ -3,7 +3,6 @@ package hollowsoft.order
 import androidx.appcompat.app.AppCompatActivity
 import cielo.orders.domain.CancellationRequest
 import cielo.orders.domain.CheckoutRequest
-import cielo.orders.domain.Credentials
 import cielo.orders.domain.Order
 import cielo.sdk.order.OrderManager
 import cielo.sdk.order.ServiceBindListener
@@ -23,7 +22,7 @@ open class OrderActivity : AppCompatActivity(), ServiceBindListener {
 
     private var bound = false
 
-    private val manager by lazy { OrderManager(Credentials("", ""), this) }
+    private val manager by lazy { OrderManager(Manifest(this).credential(), this) }
 
     override fun onStart() {
         super.onStart()
