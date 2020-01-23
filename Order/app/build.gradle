@@ -8,7 +8,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 group = 'com.github.moraisigor'
-version = '0.10.0'
+version = '0.10.1'
 
 android {
 
