@@ -17,6 +17,8 @@ import kotlin.concurrent.schedule
 open class OrderActivity : AppCompatActivity(), ServiceBindListener {
 
     companion object {
+        const val TAG = "OrderManager"
+
         const val DELAY = 1500L
     }
 
@@ -45,14 +47,20 @@ open class OrderActivity : AppCompatActivity(), ServiceBindListener {
     fun cancel(request: CancellationRequest, listener: CancellationListener) = manager.cancelOrder(request, listener)
 
     override fun onServiceBound() {
+        Logger.info(TAG, "onServiceBound")
+
         bound = true
     }
 
     override fun onServiceUnbound() {
+        Logger.info(TAG, "onServiceUnbound")
+
         bound = false
     }
 
     override fun onServiceBoundError(e: Throwable) {
+        Logger.error(TAG, "onServiceBoundError ${e.message}")
+
         Timer().schedule(DELAY) {
             manager.bind(this@OrderActivity, this@OrderActivity)
         }
