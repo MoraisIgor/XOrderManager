@@ -15,7 +15,6 @@ import kotlin.concurrent.schedule
  * @author Igor Morais
  */
 open class OrderActivity : AppCompatActivity(), ServiceBindListener {
-
     companion object {
         const val TAG = "OrderManager"
 
