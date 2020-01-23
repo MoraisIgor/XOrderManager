@@ -2,7 +2,7 @@
 
 ```
 dependencies {
-    implementation 'com.github.moraisigor:order:0.10.1'
+    implementation 'com.github.moraisigor:order:0.11.0'
 }
 ```
 
