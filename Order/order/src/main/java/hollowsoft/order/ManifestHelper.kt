@@ -7,7 +7,7 @@ import cielo.orders.domain.Credentials
 /**
  * @author Igor Morais
  */
-class Manifest(context: Context) {
+class ManifestHelper(context: Context) {
     companion object {
         const val CLIENT_ID = "CLIENT_ID"
         const val ACCESS_TOKEN = "ACCESS_TOKEN"

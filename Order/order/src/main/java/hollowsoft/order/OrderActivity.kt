@@ -23,7 +23,7 @@ open class OrderActivity : AppCompatActivity(), ServiceBindListener {
 
     private var bound = false
 
-    private val manager by lazy { OrderManager(Manifest(this).credential(), this) }
+    private val manager by lazy { OrderManager(ManifestHelper(this).credential(), this) }
 
     override fun onStart() {
         super.onStart()
