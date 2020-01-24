@@ -33,8 +33,6 @@ open class OrderActivity : AppCompatActivity(), ServiceBindListener {
 
     override fun onStop() {
         super.onStop()
-
-        manager.unbind()
     }
 
     fun create(name: String) = manager.createDraftOrder(name)
