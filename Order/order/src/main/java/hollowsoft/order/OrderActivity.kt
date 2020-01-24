@@ -39,7 +39,10 @@ open class OrderActivity : AppCompatActivity(), ServiceBindListener {
 
     fun create(name: String) = manager.createDraftOrder(name)
 
-    fun place(order: Order) = manager.placeOrder(order) ?: false
+    fun place(order: Order?) : Boolean {
+        order?.let { return manager.placeOrder(it) ?: false }
+        return false
+    }
 
     fun pay(request: CheckoutRequest, listener: PaymentListener) = manager.checkoutOrder(request, listener)
 
