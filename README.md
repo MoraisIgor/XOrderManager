@@ -9,13 +9,13 @@ dependencies {
 ## Example
 
 ```
-    <meta-data
-        android:name="CLIENT_ID"
-        android:value="Your Client Id" />
-        
-    <meta-data
-        android:name="ACCESS_TOKEN"
-        android:value="Your Access Token" />
+<meta-data
+    android:name="CLIENT_ID"
+    android:value="Your Client Id" />
+    
+<meta-data
+    android:name="ACCESS_TOKEN"
+    android:value="Your Access Token" />
 ```
 
 ```kotlin
