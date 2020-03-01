@@ -27,24 +27,29 @@ open class OrderActivity : AppCompatActivity(), ServiceBindListener {
 
     override fun onStart() {
         super.onStart()
-
         manager.bind(this, this)
     }
 
     override fun onStop() {
         super.onStop()
+        if (bound) {
+            manager.unbind()
+            bound = false
+        }
     }
 
     fun create(name: String) = manager.createDraftOrder(name)
 
-    fun place(order: Order?) : Boolean {
+    fun place(order: Order?): Boolean {
         order?.let { return manager.placeOrder(it) ?: false }
         return false
     }
 
-    fun pay(request: CheckoutRequest, listener: PaymentListener) = manager.checkoutOrder(request, listener)
+    fun pay(request: CheckoutRequest, listener: PaymentListener) =
+        manager.checkoutOrder(request, listener)
 
-    fun cancel(request: CancellationRequest, listener: CancellationListener) = manager.cancelOrder(request, listener)
+    fun cancel(request: CancellationRequest, listener: CancellationListener) =
+        manager.cancelOrder(request, listener)
 
     override fun onServiceBound() {
         Logger.info(TAG, "onServiceBound")
